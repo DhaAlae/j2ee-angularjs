@@ -4,11 +4,15 @@ var projetsController = function($http, $location) {
 
   var $this = this;
 
-
+  $http.get('http://localhost:8080/medz/webapi/secteur').then(function(response) {
+	    $this.secteurs = response.data;
+	  })
   // DATA FOT PROJECTS
   $http.get('http://localhost:8080/medz/webapi/data').then(function(response) {
     $this.projets = response.data;
   })
+  
+  // table secteurs et table sous projet
 
 $this.details= function() {
   angular.forEach($this.projets, function(projet) {

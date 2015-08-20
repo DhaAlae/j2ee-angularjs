@@ -1,19 +1,24 @@
 package org.dahmani.alae.medz.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class secteur {
 
 	
 	private int id_secteur;
 	private String nom_secteur;
+	private int id_project;
 	
 	public secteur(){
 		
 	}
 
-	public secteur(int id_secteur, String nom_secteur) {
+	public secteur(int id_secteur, String nom_secteur,int id_project) {
 		super();
 		this.id_secteur = id_secteur;
 		this.nom_secteur = nom_secteur;
+		this.id_project = id_project;
 	}
 
 	public int getId_secteur() {
@@ -30,6 +35,14 @@ public class secteur {
 
 	public void setNom_secteur(String nom_secteur) {
 		this.nom_secteur = nom_secteur;
+	}
+
+	public int getId_project() {
+		return id_project;
+	}
+
+	public void setId_project(int id_project) {
+		this.id_project = id_project;
 	}
 	
 	
