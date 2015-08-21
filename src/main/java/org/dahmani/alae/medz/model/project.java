@@ -2,8 +2,6 @@ package org.dahmani.alae.medz.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.google.gson.JsonArray;
-
 @XmlRootElement
 public class project {
 	

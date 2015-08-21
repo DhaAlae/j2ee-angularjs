@@ -1,5 +1,8 @@
 package org.dahmani.alae.medz.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class lot {
 
 	

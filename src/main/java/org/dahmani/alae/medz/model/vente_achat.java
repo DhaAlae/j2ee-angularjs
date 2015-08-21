@@ -13,9 +13,8 @@ public class vente_achat {
 	private int investissement;
 	private String mon_commercial;
 	private int nombre_employe;
-	private String activite_economique;
-	private String sous_secteur;
-	private String sous_project;
+	private int id_lot;
+	private int id_client;
 	
 	public vente_achat(){
 		
@@ -25,7 +24,7 @@ public class vente_achat {
 			Date date_aquisition, Date delai_valorisation,
 			double prix_unitaire, String zone_franche, int investissement,
 			String mon_commercial, int nombre_employe,
-			String activite_economique, String sous_secteur, String sous_project) {
+			 int id_lot, int id_client) {
 		super();
 		this.id_vente_achat = id_vente_achat;
 		this.montant = montant;
@@ -36,9 +35,8 @@ public class vente_achat {
 		this.investissement = investissement;
 		this.mon_commercial = mon_commercial;
 		this.nombre_employe = nombre_employe;
-		this.activite_economique = activite_economique;
-		this.sous_secteur = sous_secteur;
-		this.sous_project = sous_project;
+		this.id_lot = id_lot;
+		this.id_client = id_client;
 	}
 
 	public int getId_vente_achat() {
@@ -113,28 +111,22 @@ public class vente_achat {
 		this.nombre_employe = nombre_employe;
 	}
 
-	public String getActivite_economique() {
-		return activite_economique;
+	public int getId_lot() {
+		return id_lot;
 	}
 
-	public void setActivite_economique(String activite_economique) {
-		this.activite_economique = activite_economique;
+	public void setId_lot(int id_lot) {
+		this.id_lot = id_lot;
 	}
 
-	public String getSous_secteur() {
-		return sous_secteur;
+	public int getId_client() {
+		return id_client;
 	}
 
-	public void setSous_secteur(String sous_secteur) {
-		this.sous_secteur = sous_secteur;
+	public void setId_client(int id_client) {
+		this.id_client = id_client;
 	}
 
-	public String getSous_project() {
-		return sous_project;
-	}
 
-	public void setSous_project(String sous_project) {
-		this.sous_project = sous_project;
-	}
 	
 }

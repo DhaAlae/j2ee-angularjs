@@ -14,7 +14,7 @@ import org.dahmani.alae.medz.model.sous_project;
 
 public class sous_project_service {
 
-	public List<sous_project> getsoussecteurs(){
+	public List<sous_project> getsousprojects(){
 		
 		List<sous_project> list = new ArrayList<>();
 		
