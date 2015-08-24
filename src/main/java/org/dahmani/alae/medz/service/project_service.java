@@ -1,11 +1,13 @@
 package org.dahmani.alae.medz.service;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.dahmani.alae.medz.model.project;
 
 public class project_service {
@@ -37,65 +39,50 @@ public class project_service {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public project getproject(int id){
-		project p1=new project();
-		try {
-			
-		Statement st=c.createStatement();
-		ResultSet rs=st.executeQuery("select * from project where id_project="+id);
-		rs.next();
-			p1.setId_project(rs.getInt(1));
-			p1.setNom_project(rs.getString(2));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
-		return p1;
-	}
-	
-	public void deleteproject(int id){
+	public project deleteproject(project p){
 		
-		Statement st;
 		try {
-			st = c.createStatement();
-		    st.executeUpdate("delete from project where id_project="+id);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	
-	public void updateproject(project p){
-		
-		Statement st;
-		try {
-			st = c.createStatement();
-		  st.executeUpdate("update project set mon_project="+p.getNom_project()+" where id_project="+p.getId_project());
-		        
+			PreparedStatement pr=c.prepareStatement("detele from project where id_project=?");
+			pr.setInt(1, p.getId_project());
+			pr.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
+	   return p;	
 	}
 	
 	
+	public project updateproject(project p){
+		
+		try {
+			PreparedStatement pr=c.prepareStatement("update project set nom_project=? where id_project=?");
+			pr.setInt(2, p.getId_project());
+			pr.setString(1, p.getNom_project());
+			pr.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	  return p;
+	}
+	
+	public project add(project p){
+		
+		try {
+			PreparedStatement pr=c.prepareStatement("insert into project values(?,?)");
+			pr.setInt(1, p.getId_project());
+			pr.setString(2, p.getNom_project());
+			pr.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return p;
+	}
 	
 
 	
