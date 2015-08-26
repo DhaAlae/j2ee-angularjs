@@ -10,3 +10,6 @@
 ##table client : http://localhost:8080/medz/webapi/client
 ##table dirigent : http://localhost:8080/medz/webapi/dirigent
 ##table vente_achat : http://localhost:8080/medz/webapi/vente_achat
+
+## request types :
+#post for insert , put for update and delete for delete
