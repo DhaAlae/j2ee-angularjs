@@ -1,14 +1,14 @@
 package org.dahmani.alae.medz.model;
 
-import java.util.Date;
+
 
 public class vente_achat {
 
 	private int id_vente_achat;
-	private double montant;
-	private Date date_aquisition;
-	private Date delai_valorisation;
-	private double prix_unitaire;
+	private int montant;
+	private String date_aquisition;
+	private String delai_valorisation;
+	private int prix_unitaire;
 	private String zone_franche;
 	private int investissement;
 	private String mon_commercial;
@@ -20,9 +20,9 @@ public class vente_achat {
 		
 	}
 
-	public vente_achat(int id_vente_achat, double montant,
-			Date date_aquisition, Date delai_valorisation,
-			double prix_unitaire, String zone_franche, int investissement,
+	public vente_achat(int id_vente_achat, int montant,
+			String date_aquisition, String delai_valorisation,
+			int prix_unitaire, String zone_franche, int investissement,
 			String mon_commercial, int nombre_employe,
 			 int id_lot, int id_client) {
 		super();
@@ -51,31 +51,33 @@ public class vente_achat {
 		return montant;
 	}
 
-	public void setMontant(double montant) {
-		this.montant = montant;
-	}
-
-	public Date getDate_aquisition() {
-		return date_aquisition;
-	}
-
-	public void setDate_aquisition(Date date_aquisition) {
-		this.date_aquisition = date_aquisition;
-	}
-
-	public Date getDelai_valorisation() {
-		return delai_valorisation;
-	}
-
-	public void setDelai_valorisation(Date delai_valorisation) {
-		this.delai_valorisation = delai_valorisation;
-	}
+	
 
 	public double getPrix_unitaire() {
 		return prix_unitaire;
 	}
 
-	public void setPrix_unitaire(double prix_unitaire) {
+	public String getDate_aquisition() {
+		return date_aquisition;
+	}
+
+	public void setDate_aquisition(String date_aquisition) {
+		this.date_aquisition = date_aquisition;
+	}
+
+	public String getDelai_valorisation() {
+		return delai_valorisation;
+	}
+
+	public void setDelai_valorisation(String delai_valorisation) {
+		this.delai_valorisation = delai_valorisation;
+	}
+
+	public void setMontant(int montant) {
+		this.montant = montant;
+	}
+
+	public void setPrix_unitaire(int prix_unitaire) {
 		this.prix_unitaire = prix_unitaire;
 	}
 
