@@ -10,7 +10,6 @@
     "angular-ui-router": "~0.2.15",
     "metisMenu": "~2.1.0",
     "chosen": "~1.4.2",
-    "angular-chosen-localytics": "~1.0.7",
-    "chosen-bootstrap":  "~1.0.4"
+    "angular-chosen-localytics": "~1.0.7"
   }
 }
