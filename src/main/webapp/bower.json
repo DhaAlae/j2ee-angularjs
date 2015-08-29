@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Web App to Handle projects",
   "dependencies": {
-    "bootstrap": "~3.3.5",
     "angular": "~1.4.3",
-    "fontawesome": "~4.4.0",
+    "angular-chosen-localytics": "~1.0.7",
+    "angular-loading-bar": "~0.8.0",
     "angular-route": "~1.4.3",
     "angular-ui-router": "~0.2.15",
-    "metisMenu": "~2.1.0",
+    "bootstrap": "~3.3.5",
     "chosen": "~1.4.2",
-    "angular-chosen-localytics": "~1.0.7"
+    "fontawesome": "~4.4.0",
+    "metisMenu": "~2.1.0"
   }
 }
