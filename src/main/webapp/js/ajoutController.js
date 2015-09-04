@@ -13,18 +13,22 @@ var ajoutController = function($http, $scope) {
 
 $this.ajoutProjet = function() {
   $this.data = {
-    "secteurs" : $scope.secteur,
-    "sousprojets" : $scope.sousprojet
+	"id_project": 33,
+    "nom_project" : $this.projetName,
+    "l" : [1, 2]
   }
-  $http({
-    method: 'POST',
-    url: 'data',
-    data: $this.data,
-    headers: {'Content-Type': 'application/json'}
-}).then(function(data) {
-  $this.dataserv = $this.data;
-  console.log($this.dataserv);
-});
+  
+ 
+  
+	  $http({
+		    method: 'POST',
+		    url: ' http://localhost:8080/medz/webapi/data',
+		    data: $this.data,
+		    headers: {'Content-Type': 'application/json'}
+		}).then(function(response){
+	    $this.projets = response.data;
+	    $this.projetName = "";
+	  })
 }
 }
 app.controller('ajoutController', ajoutController);

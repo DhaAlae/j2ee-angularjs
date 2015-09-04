@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.dahmani.alae.medz.model.project;
+import org.dahmani.alae.medz.model.secteur;
+import org.dahmani.alae.medz.model.secteur_project;
 
 public class project_service {
 		Connect cc=new Connect();
@@ -23,13 +25,10 @@ public class project_service {
 			ResultSet rs=st.executeQuery("select * from project");
 			//project p1=new project();
 			while(rs.next()){
-				
-				project p1=new project(rs.getInt(1),rs.getString(2));
+				project p1=new project(rs.getInt(1),rs.getString(2),rs.getInt(3));
 				list.add(p1);	
 				
 				}
-			
-	
 			} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -69,12 +68,28 @@ public class project_service {
 	}
 	
 	public project add(project p){
-		
 		try {
+		 
 			PreparedStatement pr=c.prepareStatement("insert into project values(?,?)");
 			pr.setInt(1, p.getId_project());
 			pr.setString(2, p.getNom_project());
 			pr.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try{
+		PreparedStatement prr=c.prepareStatement("insert into project_secteur values(?,?)");
+					
+			prr.setInt(1, p.getId_project());
+			prr.setInt(2,p.getL());
+			
+			
+		prr.executeUpdate();
+		
+		
+		
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

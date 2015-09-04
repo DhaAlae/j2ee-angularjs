@@ -13,14 +13,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.dahmani.alae.medz.model.project;
+import org.dahmani.alae.medz.model.secteur;
+import org.dahmani.alae.medz.model.secteur_project;
 import org.dahmani.alae.medz.service.project_service;
+import org.dahmani.alae.medz.service.secteur_project_service;
 
 
 @Path("/data")
 public class data {
 	
 	project_service projectservice =new project_service();
-	
+	secteur_project_service scp=new secteur_project_service();
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<project> date(){
@@ -28,11 +31,12 @@ public class data {
 		return projectservice.getprojects();
 	}
 	
+	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public project add_sect(project p){
-		return projectservice.add(p);
+		return projectservice.add(p);		
 	}
 	
 	@PUT

@@ -3,16 +3,17 @@ package org.dahmani.alae.medz.model;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class secteur {
+public class sect {
+
 	
 	private int id_secteur;
 	private String nom_secteur;
 	
-	public secteur(){
+	public sect(){
 		
 	}
-	
-	public secteur(int id_secteur, String nom_secteur) {
+
+	public sect(int id_secteur, String nom_secteur) {
 		super();
 		this.id_secteur = id_secteur;
 		this.nom_secteur = nom_secteur;
@@ -36,5 +37,6 @@ public class secteur {
 	
 	
 	
-
+	
+	
 }
